@@ -34,6 +34,13 @@ pub unsafe fn serial_send(byte: u8) {
     outb(COM1, byte);
 }
 
+pub unsafe fn serial_recv() -> u8 {
+    while inb(COM1 + 5) & 1 == 0 {}
+    let result = inb(COM1);
+    serial_send(result);
+    result
+}
+
 use core::fmt;
 use spin::Mutex;
 

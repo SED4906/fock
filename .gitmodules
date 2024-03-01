@@ -1,6 +1,0 @@
-[submodule "wasm3-rs"]
-	path = wasm3-rs
-	url = https://github.com/SED4906/wasm3-rs
-[submodule "musl-headers"]
-	path = musl-headers
-	url = https://github.com/SED4906/musl-headers
