@@ -10,7 +10,6 @@
 
 #[cfg_attr(target_arch = "x86_64", path = "arch/x86_64/cpu.rs")]
 mod cpu;
-mod fs;
 mod helper;
 mod irq;
 mod mm;
@@ -22,7 +21,7 @@ extern crate alloc;
 
 use core::panic::PanicInfo;
 
-use alloc::{borrow::ToOwned, string::{String, ToString}, vec::Vec};
+use alloc::{string::{String, ToString}, vec::Vec};
 use nom::multi::many1;
 
 static MODULE_REQUEST: limine::request::ModuleRequest = limine::request::ModuleRequest::new();
